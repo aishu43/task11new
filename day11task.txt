@@ -1,0 +1,182 @@
+1. what are the four accessbility modifier in java
+
+private
+default
+protected
+public
+
+Local variable is accessible to all the objects of the class. 
+Instance variable has different copies for different objects. 
+Static variables only have one single copy of the entire class.
+
+2)what is difference between exception and error in java?
+
+error 
+
+*recovering from error is not possible
+*all errors in java are unchecked type
+*error are mostly caused by the enivornment in which program is running
+*errors can occur at compile time
+*they are defined in java.lang.error package
+
+example:
+java.lang.StackOverflowError,
+java.lang.OutOfMemoryError
+
+Exceptions
+
+*We can recover from exceptions by either using try-catch block or throwing exceptions back to the caller.
+*Exceptions include both checked as well as unchecked type.
+*Program itself is responsible for causing exceptions
+*unchecked exceptions occurs at compile time
+*they are defined in java.lang.Exceptionpackage
+
+example 
+Checked Exception:
+SQLException,IOException
+Unchecked Exceptions : 
+ArrayIndexOutOfBoundException, NullPointerException, ArithmeticException,NumberFormatException.
+
+3) what is difference between checked exception and unchecked exception java?
+Unchecked exception:  It will occur at the Run time exception. 
+Checked exception: Checked exception will occur at the Compile time exception.
+
+4) write a program that reads user input of two integer and performs division,handle the exception is thrown when the second number is zero and display error message is zero?
+package task11;
+
+public class exception {
+
+	public static void main (String args[])
+	{
+		String d= null;
+		try{
+		System.out.println(d.length());
+		}
+		catch(Exception e)
+		{
+		System.out.println(e);
+		}
+		System.out.println(6+7);
+}
+}
+
+o/p
+java.lang.NullPointerException: Cannot invoke "String.length()" because "d" is null
+13
+
+5)write the code of ArrayIndexOutOfBoundsException & StringIndexOutOfBoundsException?
+
+package task11;
+public class name ArrayIndexOutOfBoundsException
+{
+public static void main(String []args)
+
+int []arr = new int[3];
+arr[0]=3;
+arr[1]=2;
+arr[2]=1; 
+arr[3]=0;
+}
+}
+
+o/p
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at task11.ArrayIndexOfBoundary.main(ArrayIndexOfBoundary.java:12)
+
+
+StringIndexOutOfBoundsException
+
+package task11;
+
+public class NumberFormatException {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		String a= "guvi";
+		String b="100";
+		
+		{
+			int n=0;
+			n=Integer.parseInt(a);
+			{
+			System.out.println(n+10);
+		}
+	}}
+o/p
+
+Exception in thread "main" java.lang.NumberFormatException: For input string: "guvi"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at task11.NumberFormatException.main(NumberFormatException.java:14)
+
+6) login system for website using java.if the user enter the incorrect passwords,you want to display the informing them of the error.how would you handle use exception handling the situation 
+
+
+package task11;
+
+public class ErrorHandling {
+
+	public static void main(String[] args) {
+		
+		String d =null;
+		try {
+		System.out.println(d.length());
+		}
+		catch(Exception e)
+		{
+		System.out.println(e);
+		}
+		System.out.println("User enter the incorrect password");
+
+	}
+
+}
+
+o/p
+java.lang.NullPointerException: Cannot invoke "String.length()" because "d" is null
+User enter the incorrect password
+
+7)Create a  custom exceptio java in InvalidAgeException that is thrown when the age is enter age less than 18.Implement eception handling in java program to 
+catch the invalidageexception and display an error message?
+
+package task11;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class InvalidAgeException {
+
+	public static void main(String[] args)  {
+		
+		
+		InputStreamReader ir = new InputStreamReader(System.in);
+		BufferedReader br =new BufferedReader(ir);
+		String s = null;
+System.out.println("InvalidAgeException");
+
+int a =18;
+
+	s=br.readLine();
+
+	
+
+if (a>=18)
+{
+	throw new NullPointerException();
+}
+
+	}
+
+}
+o/p
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Unhandled exception type IOException
+
+	at task11.InvalidAgeException.main(InvalidAgeException.java:19)
+
+
